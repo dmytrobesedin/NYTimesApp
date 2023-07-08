@@ -8,18 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		2D3D712F2A59D15D0047DE98 /* NYTimesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D712E2A59D15D0047DE98 /* NYTimesAppApp.swift */; };
-		2D3D71312A59D15D0047DE98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D71302A59D15D0047DE98 /* ContentView.swift */; };
+		2D3D71312A59D15D0047DE98 /* CategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */; };
 		2D3D71332A59D15F0047DE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3D71322A59D15F0047DE98 /* Assets.xcassets */; };
 		2D3D71372A59D15F0047DE98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3D71362A59D15F0047DE98 /* Preview Assets.xcassets */; };
+		2D3D71402A59D2660047DE98 /* BookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D713F2A59D2660047DE98 /* BookAPIService.swift */; };
+		2D3D71432A59D5290047DE98 /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D71422A59D5290047DE98 /* CategoryAPI.swift */; };
+		2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */; };
+		2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AE2A59F20B00868C5A /* BookListView.swift */; };
+		2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304B22A59F25500868C5A /* BookListViewModel.swift */; };
+		2DE304B72A59FA1000868C5A /* BookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304B62A59FA1000868C5A /* BookAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D3D712B2A59D15D0047DE98 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3D712E2A59D15D0047DE98 /* NYTimesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesAppApp.swift; sourceTree = "<group>"; };
-		2D3D71302A59D15D0047DE98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListView.swift; sourceTree = "<group>"; };
 		2D3D71322A59D15F0047DE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3D71342A59D15F0047DE98 /* NYTimesApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NYTimesApp.entitlements; sourceTree = "<group>"; };
 		2D3D71362A59D15F0047DE98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D3D713F2A59D2660047DE98 /* BookAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIService.swift; sourceTree = "<group>"; };
+		2D3D71422A59D5290047DE98 /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
+		2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
+		2DE304AE2A59F20B00868C5A /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
+		2DE304B22A59F25500868C5A /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		2DE304B62A59FA1000868C5A /* BookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +64,11 @@
 		2D3D712D2A59D15D0047DE98 /* NYTimesApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DE304B82A5A0E5800868C5A /* Services */,
+				2DE304AB2A59E99900868C5A /* ViewModels */,
+				2DE304AA2A59E98D00868C5A /* Views */,
+				2D3D71412A59D5190047DE98 /* Models */,
 				2D3D712E2A59D15D0047DE98 /* NYTimesAppApp.swift */,
-				2D3D71302A59D15D0047DE98 /* ContentView.swift */,
 				2D3D71322A59D15F0047DE98 /* Assets.xcassets */,
 				2D3D71342A59D15F0047DE98 /* NYTimesApp.entitlements */,
 				2D3D71352A59D15F0047DE98 /* Preview Content */,
@@ -67,6 +82,41 @@
 				2D3D71362A59D15F0047DE98 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2D3D71412A59D5190047DE98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D3D71422A59D5290047DE98 /* CategoryAPI.swift */,
+				2DE304B62A59FA1000868C5A /* BookAPI.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DE304AA2A59E98D00868C5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */,
+				2DE304AE2A59F20B00868C5A /* BookListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DE304AB2A59E99900868C5A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */,
+				2DE304B22A59F25500868C5A /* BookListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2DE304B82A5A0E5800868C5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2D3D713F2A59D2660047DE98 /* BookAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3D71312A59D15D0047DE98 /* ContentView.swift in Sources */,
+				2DE304B72A59FA1000868C5A /* BookAPI.swift in Sources */,
+				2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */,
+				2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */,
+				2D3D71312A59D15D0047DE98 /* CategoriesListView.swift in Sources */,
+				2D3D71432A59D5290047DE98 /* CategoryAPI.swift in Sources */,
+				2D3D71402A59D2660047DE98 /* BookAPIService.swift in Sources */,
+				2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */,
 				2D3D712F2A59D15D0047DE98 /* NYTimesAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +343,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DB.NYTimesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,10 +383,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DB.NYTimesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
