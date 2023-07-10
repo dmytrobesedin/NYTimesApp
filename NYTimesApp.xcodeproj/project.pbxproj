@@ -13,6 +13,13 @@
 		2D3D71372A59D15F0047DE98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3D71362A59D15F0047DE98 /* Preview Assets.xcassets */; };
 		2D3D71402A59D2660047DE98 /* BookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D713F2A59D2660047DE98 /* BookAPIService.swift */; };
 		2D3D71432A59D5290047DE98 /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D71422A59D5290047DE98 /* CategoryAPI.swift */; };
+		2D5AD4402A5BF9B600F7A172 /* RequestPathConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AD43F2A5BF9B600F7A172 /* RequestPathConstants.swift */; };
+		2DC731DF2A5C68600002553A /* BookAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC731DE2A5C68600002553A /* BookAPIError.swift */; };
+		2DC731E32A5C6C6A0002553A /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC731E22A5C6C6A0002553A /* BookCell.swift */; };
+		2DC731E52A5C6E410002553A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC731E42A5C6E410002553A /* Constants.swift */; };
+		2DC731E82A5C763C0002553A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC731E72A5C763C0002553A /* Realm */; };
+		2DC731EA2A5C763C0002553A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC731E92A5C763C0002553A /* RealmSwift */; };
+		2DC731EC2A5C76610002553A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC731EB2A5C76610002553A /* RealmManager.swift */; };
 		2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */; };
 		2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AE2A59F20B00868C5A /* BookListView.swift */; };
 		2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304B22A59F25500868C5A /* BookListViewModel.swift */; };
@@ -28,6 +35,11 @@
 		2D3D71362A59D15F0047DE98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D3D713F2A59D2660047DE98 /* BookAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIService.swift; sourceTree = "<group>"; };
 		2D3D71422A59D5290047DE98 /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
+		2D5AD43F2A5BF9B600F7A172 /* RequestPathConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPathConstants.swift; sourceTree = "<group>"; };
+		2DC731DE2A5C68600002553A /* BookAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIError.swift; sourceTree = "<group>"; };
+		2DC731E22A5C6C6A0002553A /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		2DC731E42A5C6E410002553A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2DC731EB2A5C76610002553A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
 		2DE304AE2A59F20B00868C5A /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		2DE304B22A59F25500868C5A /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
@@ -39,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC731EA2A5C763C0002553A /* RealmSwift in Frameworks */,
+				2DC731E82A5C763C0002553A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +78,9 @@
 		2D3D712D2A59D15D0047DE98 /* NYTimesApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DC731E42A5C6E410002553A /* Constants.swift */,
+				2D5AD43F2A5BF9B600F7A172 /* RequestPathConstants.swift */,
+				2DC731DE2A5C68600002553A /* BookAPIError.swift */,
 				2DE304B82A5A0E5800868C5A /* Services */,
 				2DE304AB2A59E99900868C5A /* ViewModels */,
 				2DE304AA2A59E98D00868C5A /* Views */,
@@ -98,6 +115,7 @@
 			children = (
 				2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */,
 				2DE304AE2A59F20B00868C5A /* BookListView.swift */,
+				2DC731E22A5C6C6A0002553A /* BookCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2D3D713F2A59D2660047DE98 /* BookAPIService.swift */,
+				2DC731EB2A5C76610002553A /* RealmManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,6 +154,10 @@
 			dependencies = (
 			);
 			name = NYTimesApp;
+			packageProductDependencies = (
+				2DC731E72A5C763C0002553A /* Realm */,
+				2DC731E92A5C763C0002553A /* RealmSwift */,
+			);
 			productName = NYTimesApp;
 			productReference = 2D3D712B2A59D15D0047DE98 /* NYTimesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +186,9 @@
 				Base,
 			);
 			mainGroup = 2D3D71222A59D15D0047DE98;
+			packageReferences = (
+				2DC731E62A5C763C0002553A /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 2D3D712C2A59D15D0047DE98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,14 +215,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC731EC2A5C76610002553A /* RealmManager.swift in Sources */,
 				2DE304B72A59FA1000868C5A /* BookAPI.swift in Sources */,
 				2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */,
+				2DC731E32A5C6C6A0002553A /* BookCell.swift in Sources */,
 				2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */,
 				2D3D71312A59D15D0047DE98 /* CategoriesListView.swift in Sources */,
+				2DC731DF2A5C68600002553A /* BookAPIError.swift in Sources */,
+				2D5AD4402A5BF9B600F7A172 /* RequestPathConstants.swift in Sources */,
 				2D3D71432A59D5290047DE98 /* CategoryAPI.swift in Sources */,
 				2D3D71402A59D2660047DE98 /* BookAPIService.swift in Sources */,
 				2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */,
 				2D3D712F2A59D15D0047DE98 /* NYTimesAppApp.swift in Sources */,
+				2DC731E52A5C6E410002553A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +445,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2DC731E62A5C763C0002553A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2DC731E72A5C763C0002553A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DC731E62A5C763C0002553A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2DC731E92A5C763C0002553A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DC731E62A5C763C0002553A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D3D71232A59D15D0047DE98 /* Project object */;
 }

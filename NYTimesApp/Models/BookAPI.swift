@@ -50,6 +50,7 @@ struct Book: Codable, Identifiable {
     let title, author, contributor: String
     let contributorNote: String
     let bookImage: String
+    let bookImageWidth, bookImageHeight: Int
     let amazonProductURL: String
     let ageGroup, bookReviewLink, firstChapterLink, sundayReviewLink: String
     let articleChapterLink: String
@@ -67,6 +68,8 @@ struct Book: Codable, Identifiable {
         case publisher, description, price, title, author, contributor
         case contributorNote = "contributor_note"
         case bookImage = "book_image"
+        case bookImageWidth = "book_image_width"
+        case bookImageHeight = "book_image_height"
         case amazonProductURL = "amazon_product_url"
         case ageGroup = "age_group"
         case bookReviewLink = "book_review_link"

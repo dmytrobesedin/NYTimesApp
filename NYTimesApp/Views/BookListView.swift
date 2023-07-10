@@ -19,13 +19,8 @@ struct BookListView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(viewModel.listOfBooks) { result in
-                
-                VStack(alignment: .center, spacing: 5) {
-                    Text(result.title)
-                    
-                    Text(result.description)
-                }
+            ForEach(viewModel.listOfBooks) { book in
+                BookCell(book: book)
             }
         }
         .onAppear {
