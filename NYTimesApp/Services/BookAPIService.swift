@@ -18,7 +18,7 @@ final class BookAPIService: ObservableObject {
     private let apiKey = "?api-key=pcNHSTb3ZwSuXvG0hXyBhNX9rkBUqwnd"
     
     // MARK: - Methods
-    func fetchBookCategories(completion: @escaping (Result<CategoryAPI, Error>) -> Void)  {
+    func fetchCategories(completion: @escaping (Result<[CategoryAPIResult]?, Error>) -> Void)  {
         let urlString = RequestPathConstants.baseURLString + RequestPathConstants.getCategories + apiKey
         guard let url = URL(string: urlString) else {
             completion(.failure(BookAPIError.invalidURL()))
@@ -35,7 +35,7 @@ final class BookAPIService: ObservableObject {
             let jsonDecoder = JSONDecoder()
             do {
                 let decodeData = try jsonDecoder.decode(CategoryAPI.self, from: data)
-                completion(.success(decodeData))
+                completion(.success(decodeData.results))
             }
             catch (let error){
                 completion(.failure(error))
@@ -44,7 +44,7 @@ final class BookAPIService: ObservableObject {
         dataTask.resume()
     }
     
-    func fetchBooksForCategory(category: String, completion: @escaping (Result<BookAPI, Error>) -> Void) {
+    func fetchBooksForCategory(category: String, completion: @escaping (Result<[Book]?, Error>) -> Void) {
         let urlString = RequestPathConstants.baseURLString + "\(category)" + apiKey
         guard let url = URL(string: urlString) else {
             completion(.failure(BookAPIError.invalidURL()))
@@ -68,7 +68,7 @@ final class BookAPIService: ObservableObject {
             let jsonDecoder = JSONDecoder()
             do {
                 let decodeData = try jsonDecoder.decode(BookAPI.self, from: data)
-                completion(.success(decodeData))
+                completion(.success(decodeData.results.books))
             }
             catch (let error){
                 completion(.failure(error))

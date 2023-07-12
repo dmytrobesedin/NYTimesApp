@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 // MARK: - BookAPI
 struct BookAPI: Codable {
@@ -41,44 +42,72 @@ struct BookAPIResult: Codable {
 }
 
 // MARK: - Book
-struct Book: Codable, Identifiable {
-    let id = UUID()
-    let rank, rankLastWeek, weeksOnList, asterisk: Int
-    let dagger: Int
-    let primaryIsbn10, primaryIsbn13, publisher, description: String
-    let price: String
-    let title, author, contributor: String
-    let contributorNote: String
-    let bookImage: String
-    let bookImageWidth, bookImageHeight: Int
-    let amazonProductURL: String
-    let ageGroup, bookReviewLink, firstChapterLink, sundayReviewLink: String
-    let articleChapterLink: String
-    let isbns: [Isbn]
-    let buyLinks: [BuyLink]
-    let bookURI: String
+class Book: Object, ObjectKeyIdentifiable, Codable, Identifiable {
+    @Persisted(primaryKey: true) var id: UUID
+    @Persisted var rank: Int
+        //rankLastWeek, weeksOnList, asterisk: Int
+    //let dagger: Int
+   // let primaryIsbn10, primaryIsbn13,
+    @Persisted var publisher: String
+        
+    
+    @Persisted var bookDescription: String
+    //let price: String
+    @Persisted var title: String
+    @Persisted var author: String
 
+        //contributor: String
+    //let contributorNote: String
+    
+    @Persisted var bookImage: String
+    @Persisted var bookImageData: Data? = nil
+    //let bookImageWidth, bookImageHeight: Int
+    //let amazonProductURL: String
+   // let ageGroup, bookReviewLink, firstChapterLink, sundayReviewLink: String
+   // let articleChapterLink: String
+   // let isbns: [Isbn]
+  //  let buyLinks: [BuyLink]
+    //let bookURI: String
+
+    convenience init(id: UUID = UUID(),
+                     rank: Int,
+                     publisher: String,
+                     description: String,
+                     title: String,
+                     author: String,
+                     bookImage: String) {
+        self.init()
+        self.id = id
+        self.rank = rank
+        self.publisher = publisher
+        self.bookDescription = description
+        self.title = title
+        self.author = author
+        self.bookImage = bookImage
+    }
+    
     enum CodingKeys: String, CodingKey {
         case rank
-        case rankLastWeek = "rank_last_week"
-        case weeksOnList = "weeks_on_list"
-        case asterisk, dagger
-        case primaryIsbn10 = "primary_isbn10"
-        case primaryIsbn13 = "primary_isbn13"
-        case publisher, description, price, title, author, contributor
-        case contributorNote = "contributor_note"
+       // case rankLastWeek = "rank_last_week"
+       // case weeksOnList = "weeks_on_list"
+       // case asterisk, dagger
+      //  case primaryIsbn10 = "primary_isbn10"
+      //  case primaryIsbn13 = "primary_isbn13"
+        case publisher, title, author
+        case bookDescription = "description"
+       // case contributorNote = "contributor_note"
         case bookImage = "book_image"
-        case bookImageWidth = "book_image_width"
-        case bookImageHeight = "book_image_height"
-        case amazonProductURL = "amazon_product_url"
-        case ageGroup = "age_group"
-        case bookReviewLink = "book_review_link"
-        case firstChapterLink = "first_chapter_link"
-        case sundayReviewLink = "sunday_review_link"
-        case articleChapterLink = "article_chapter_link"
-        case isbns
-        case buyLinks = "buy_links"
-        case bookURI = "book_uri"
+//        case bookImageWidth = "book_image_width"
+//        case bookImageHeight = "book_image_height"
+//        case amazonProductURL = "amazon_product_url"
+//        case ageGroup = "age_group"
+//        case bookReviewLink = "book_review_link"
+//        case firstChapterLink = "first_chapter_link"
+//        case sundayReviewLink = "sunday_review_link"
+//        case articleChapterLink = "article_chapter_link"
+//        case isbns
+//        case buyLinks = "buy_links"
+//        case bookURI = "book_uri"
     }
 }
 

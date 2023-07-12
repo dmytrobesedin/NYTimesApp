@@ -15,16 +15,34 @@ struct BookListView: View {
     init(category: String) {
         let viewModel = BookListViewModel(category: category)
         self._viewModel = StateObject(wrappedValue: viewModel)
+        
+        Task {
+           await viewModel.getBooks()
+        }
     }
     
     var body: some View {
-        ScrollView {
-            ForEach(viewModel.listOfBooks) { book in
-                BookCell(book: book)
+        ZStack {
+            switch viewModel.state {
+            case .empty:
+                EmptyView()
+                
+            case .loading:
+                LoadingView()
+                    .navigationBarTitleDisplayMode(.inline)
+
+            case .content:
+                ScrollView {
+                    ForEach(viewModel.bookModel.books) { book in
+                        BookCell(book: book)
+                    }
+                }
             }
         }
         .onAppear {
-            viewModel.getBooks()
+//            Task {
+//               await viewModel.getBooks()
+//            }
         }
         .padding()
     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2556682A5E2B4900E9D2F5 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2556672A5E2B4900E9D2F5 /* LoadingState.swift */; };
+		2D25566A2A5E32CF00E9D2F5 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2556692A5E32CF00E9D2F5 /* BookModel.swift */; };
+		2D25566C2A5E4D6900E9D2F5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25566B2A5E4D6900E9D2F5 /* LoadingView.swift */; };
 		2D3D712F2A59D15D0047DE98 /* NYTimesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D712E2A59D15D0047DE98 /* NYTimesAppApp.swift */; };
 		2D3D71312A59D15D0047DE98 /* CategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */; };
 		2D3D71332A59D15F0047DE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3D71322A59D15F0047DE98 /* Assets.xcassets */; };
@@ -20,6 +23,7 @@
 		2DC731E82A5C763C0002553A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC731E72A5C763C0002553A /* Realm */; };
 		2DC731EA2A5C763C0002553A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC731E92A5C763C0002553A /* RealmSwift */; };
 		2DC731EC2A5C76610002553A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC731EB2A5C76610002553A /* RealmManager.swift */; };
+		2DDDEFCF2A5DB36A00851FE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDDEFCE2A5DB36A00851FE4 /* User.swift */; };
 		2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */; };
 		2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304AE2A59F20B00868C5A /* BookListView.swift */; };
 		2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE304B22A59F25500868C5A /* BookListViewModel.swift */; };
@@ -27,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2556672A5E2B4900E9D2F5 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		2D2556692A5E32CF00E9D2F5 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		2D25566B2A5E4D6900E9D2F5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2D3D712B2A59D15D0047DE98 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3D712E2A59D15D0047DE98 /* NYTimesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesAppApp.swift; sourceTree = "<group>"; };
 		2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListView.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		2DC731E22A5C6C6A0002553A /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		2DC731E42A5C6E410002553A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DC731EB2A5C76610002553A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		2DDDEFCE2A5DB36A00851FE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2DE304AC2A59E9B300868C5A /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
 		2DE304AE2A59F20B00868C5A /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		2DE304B22A59F25500868C5A /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 		2D3D712D2A59D15D0047DE98 /* NYTimesApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DC731ED2A5C93370002553A /* Managers */,
 				2DC731E42A5C6E410002553A /* Constants.swift */,
 				2D5AD43F2A5BF9B600F7A172 /* RequestPathConstants.swift */,
 				2DC731DE2A5C68600002553A /* BookAPIError.swift */,
@@ -106,8 +115,19 @@
 			children = (
 				2D3D71422A59D5290047DE98 /* CategoryAPI.swift */,
 				2DE304B62A59FA1000868C5A /* BookAPI.swift */,
+				2DDDEFCE2A5DB36A00851FE4 /* User.swift */,
+				2D2556672A5E2B4900E9D2F5 /* LoadingState.swift */,
+				2D2556692A5E32CF00E9D2F5 /* BookModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2DC731ED2A5C93370002553A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2DC731EB2A5C76610002553A /* RealmManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		2DE304AA2A59E98D00868C5A /* Views */ = {
@@ -116,6 +136,7 @@
 				2D3D71302A59D15D0047DE98 /* CategoriesListView.swift */,
 				2DE304AE2A59F20B00868C5A /* BookListView.swift */,
 				2DC731E22A5C6C6A0002553A /* BookCell.swift */,
+				2D25566B2A5E4D6900E9D2F5 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				2D3D713F2A59D2660047DE98 /* BookAPIService.swift */,
-				2DC731EB2A5C76610002553A /* RealmManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,13 +239,17 @@
 				2DE304B72A59FA1000868C5A /* BookAPI.swift in Sources */,
 				2DE304AD2A59E9B300868C5A /* CategoriesListViewModel.swift in Sources */,
 				2DC731E32A5C6C6A0002553A /* BookCell.swift in Sources */,
+				2D25566C2A5E4D6900E9D2F5 /* LoadingView.swift in Sources */,
+				2D25566A2A5E32CF00E9D2F5 /* BookModel.swift in Sources */,
 				2DE304AF2A59F20B00868C5A /* BookListView.swift in Sources */,
 				2D3D71312A59D15D0047DE98 /* CategoriesListView.swift in Sources */,
+				2DDDEFCF2A5DB36A00851FE4 /* User.swift in Sources */,
 				2DC731DF2A5C68600002553A /* BookAPIError.swift in Sources */,
 				2D5AD4402A5BF9B600F7A172 /* RequestPathConstants.swift in Sources */,
 				2D3D71432A59D5290047DE98 /* CategoryAPI.swift in Sources */,
 				2D3D71402A59D2660047DE98 /* BookAPIService.swift in Sources */,
 				2DE304B32A59F25500868C5A /* BookListViewModel.swift in Sources */,
+				2D2556682A5E2B4900E9D2F5 /* LoadingState.swift in Sources */,
 				2D3D712F2A59D15D0047DE98 /* NYTimesAppApp.swift in Sources */,
 				2DC731E52A5C6E410002553A /* Constants.swift in Sources */,
 			);

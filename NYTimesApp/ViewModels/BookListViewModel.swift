@@ -11,36 +11,55 @@ import SwiftUI
 final class BookListViewModel: ObservableObject {
     // MARK: - Properties
     var category: String
-    @Published var listOfBooks = [Book]()
     @Published var showAlert = false
     @Published var alertTitle = ""
     @Published var alertMessage = ""
+    @Published var state: LoadingState = .empty
     
     // MARK: - Private properties
-    @ObservedObject private var bookAPIService = BookAPIService.shared
+    @ObservedObject private(set) var realmManager = RealmManager.shared
     
+    var bookModel: BookModel {
+        guard let books = realmManager.user.books.first(where: {$0.categoryId == category}) else {
+            return BookModel()
+        }
+        return books
+    }
     // MARK: - Init
     init(category: String) {
         self.category = category
     }
     
     // MARK: - Methods
-    func getBooks() {
-        bookAPIService.fetchBooksForCategory(category: category) { result in
-            switch result {
-            case .success(let bookAPI):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    self.listOfBooks = bookAPI.results.books
-                }
-            case .failure(let failure):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    self.alertTitle = "Receive Books"
-                    self.alertMessage = failure.localizedDescription
-                    self.showAlert = true
+    func getBooks() async {
+        state = .loading
+        
+        let completionHandler: ((Bool, Error?) -> Void) = { success, error in
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                if error != nil {
+                    self.showAlert(title: "Receive books",
+                                   message: error?.localizedDescription ?? "Failed to get books.")
+                } else {
+                    guard success == true else {
+                        self.showAlert(title: "Receive books",
+                                       message: "Failed to get books.")
+                        return
+                    }
+                    
+                    withAnimation {
+                        let hasBooks = self.realmManager.user.books.isEmpty == false
+                        self.state = hasBooks ? .content : .empty
+                    }
                 }
             }
         }
+        realmManager.fetchBooksForCategory(category: category, completion: completionHandler)
+    }
+    
+    private func showAlert(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        showAlert = true
     }
 }

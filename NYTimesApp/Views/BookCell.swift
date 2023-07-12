@@ -78,7 +78,7 @@ struct BookCell: View {
                     .foregroundColor(.black)
             }
             
-            Text("\(Book.CodingKeys.description.rawValue) - \(book.description)")
+            Text("\(Book.CodingKeys.bookDescription.rawValue) - \(book.bookDescription)")
                 .font(.system(size: 14, weight: .regular))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.leading)

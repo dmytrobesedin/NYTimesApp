@@ -13,8 +13,39 @@ struct CategoriesListView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                ForEach(viewModel.categories) { result in
+            ZStack {
+                switch viewModel.state {
+                case .loading:
+                    LoadingView()
+                        .navigationBarTitleDisplayMode(.inline)
+                case .empty:
+                    EmptyView()
+                case .content:
+                    categories
+                }
+            }
+            .onAppear {
+                Task {
+                    await viewModel.getCategories()
+                }
+            }
+//            .navigationDestination(for: String.self) { value in
+//                BookListView(category: value)
+//            }
+            .alert(isPresented: $viewModel.showAlert, content: {
+                Alert(
+                    title: Text(viewModel.alertTitle),
+                    message: Text(viewModel.alertMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            })
+        }
+     
+    }
+    
+    var categories: some View {
+        ScrollView {
+            ForEach(viewModel.realmManager.user.categories) { result in
                     HStack {
                         VStack(alignment: .leading, spacing: 5) {
                             Text(result.listName)
@@ -28,7 +59,7 @@ struct CategoriesListView: View {
                         
                         Spacer()
                         
-                        NavigationLink(value: result.listNameEncoded, label: {
+                        NavigationLink(destination: BookListView(category: result.listNameEncoded), label: {
                             Image(systemName: "arrow.right")
                                 .buttonStyle(.borderless)
                         })
@@ -38,22 +69,8 @@ struct CategoriesListView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.gray.opacity(0.25)))
                 }
-            }
-            .padding(.horizontal, 10)
-            .navigationDestination(for: String.self) { value in
-                BookListView(category: value)
-            }
-            .alert(isPresented: $viewModel.showAlert, content: {
-                Alert(
-                    title: Text(viewModel.alertTitle),
-                    message: Text(viewModel.alertMessage),
-                    dismissButton: .default(Text("OK"))
-                )
-            })
         }
-        .onAppear {
-            viewModel.getCategories()
-        }
+        .padding(.horizontal, 10)
     }
 }
 
